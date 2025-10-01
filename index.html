@@ -471,7 +471,7 @@ function loadAnalytics(uid){
 // Copy shop link function
 function copyShopLink() {
   if(!sellerStoreId){ alert("Store ID পাওয়া যায়নি।"); return; }
-  const shopLink = window.location.origin + "/mystockbd /buyer-profile.html?storeId=" + sellerStoreId;
+  const shopLink = window.location.origin + "/mystockbd/buyer-profile.html?storeId=" + sellerStoreId;
   navigator.clipboard.writeText(shopLink).then(() => { alert("Shop Link কপি হয়েছে: " + shopLink); });
 }
 
@@ -485,5 +485,6 @@ function logout(){ auth.signOut().then(()=>{ window.location.href="login.html"; 
 </script>
 </body>
 </html>
+
 
 
