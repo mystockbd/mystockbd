@@ -470,10 +470,19 @@ function loadAnalytics(uid){
 
 // Copy shop link function
 function copyShopLink() {
-  if(!sellerStoreId){ alert("Store ID পাওয়া যায়নি।"); return; }
-  const shopLink = window.location.origin + "/mystockbd/buyer-profile.html?storeId=" + sellerStoreId;
-  navigator.clipboard.writeText(shopLink).then(() => { alert("Shop Link কপি হয়েছে: " + shopLink); });
+  if (!sellerStoreId) { 
+    alert("Store ID পাওয়া যায়নি।"); 
+    return; 
+  }
+
+  // 🔹 পুরো লিংক বানিয়ে তারপর trim()
+  const shopLink = (window.location.origin + "/mystockbd/buyer-profile.html?storeId=" + sellerStoreId).trim();
+
+  navigator.clipboard.writeText(shopLink).then(() => { 
+    alert("Shop Link কপি হয়েছে: " + shopLink); 
+  });
 }
+
 
 // Navigation
 function goToProducts(){ window.location.href="my-product.html"; }
@@ -485,6 +494,7 @@ function logout(){ auth.signOut().then(()=>{ window.location.href="login.html"; 
 </script>
 </body>
 </html>
+
 
 
 
